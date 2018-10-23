@@ -1,0 +1,6 @@
+lecture 4:
+In this lecture the Backpropagation algorithm was presented in detail. Basically
+we learned, that instead of directly computing the whole direvative for all entries,
+we can modulize this in a computational graph, which makes it easier.
+1) What are the effects of sum, mul, max on backprob?
+The gradients can also be done for vectors, in this case they become jacobians.

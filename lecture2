@@ -1,0 +1,24 @@
+lecture 2:
+The neighearest-neighbour algorithm was introduced as a simple classification
+algorithm. It works by just comparing every new picture with the training data, giving
+a distance between the pictures. It then labelest the picture according to the k-nearest
+Neighbours. A big problem with that is the training time of O(n). Furthmore it
+doesnt really capture any information of a picture. You can create two pictures
+with the same distance but that are really different.
+
+The k parameter is callled a Hyperparameter. (As well as the distance measute)
+It is not directly part of the data but more of the algorithm. The way to choose
+the rigth parameter is to try which one works best. Therefore it is common to
+divide the dataset in training set, validation set and test set. The validation
+set is used for testing which Hyperparameter works best on the data. A more
+sophisticated approach, but also more time demanding, is cross validation. In CV
+the dataset gets divided into different folds. The data is then trained with
+some of the folds and Parameters evaluated everytime with one the folds.
+Also the curse of dimensionality is a big problem here, because the data needs
+to represent the space dense to work good.
+
+A other approach for classification are linear classifiers. The problem with them
+is that some data is not linear separable. And furthermore since it has the same
+weights for the same label, but the labels can have a huge variety in looks, it
+needs to adjust for this variety by kind of using the avergage of each image in
+that class.

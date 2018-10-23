@@ -1,0 +1,28 @@
+lecture 6:
+-activation Function:
+One of the first was sigmoid function. Good: Squashes Value between 0 and 1.
+Bad: saturated gradient in extremes, dont has 0 mean, exp hard to calculate.
+Tanh has the advantage of having 0 mean, but still the saturated gradient problem.
+Better is to use the ReLU, because it doesnt have the saturated problem (at least
+not that much, values lower 0 saturate). But also doesnt have zero mean. There exist
+different variants of the ReLu, which solve the prolem of zero mean, and saturation
+a little. A new one is the max
+
+1) Why is zero mean important? (but not that important)
+2) Name different activation functions and theire adv/disadv
+3) Explain the prolem of dying ReLu
+
+-data preprocessing:
+To avoid the zero mean problem, data preprocessing is applied. Subtract mean,
+and normalizing.
+1) what is the geomatric interpretation of subtracting mean?
+2) When is normalizing useful?
+
+- weight inizilisation:
+The first idea is weights to zero. The problem is, that all the weights are the
+same, which results in the same gradients, which results in the same weights etc.
+The next idea is small random numbers. The small gradients can lead to problems
+though.
+1) Why is zero inizilisation a bad idea? Calculate an example.
+FINISH
+- batch normalization:

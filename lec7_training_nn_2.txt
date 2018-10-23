@@ -1,0 +1,34 @@
+The basic (stoachastic) gradient descent has some disadvantages. For example, in
+saddle points(more common than local min, --why--?) the gradient is almost zero, making training there slow. Furthermore
+if the gradient in different direction are very different (How can you check?),
+the gradient descent makes a zick zack movement to the minimum. (Why?)
+Furthermore the SGD is stoachastic, which means, that the walk to the minimum is
+a little like a random walk.
+There are different more proficient ways to do the gradient descent. One idea is
+the idea of momentum. In addtion to the gradient, you also take the velocity, which
+adds up over time with kind of a friction term. This prevents stopping in saddle points,
+cause it still has velocity. Also stops a bit of random walk.
+Another idea is that of second order momentum. In this you add up the squared sum
+of the gradient and divide the update by this. This way, in direction of really
+high gradient, it gets lower and more in regions of low gradient, which provents
+the zick-zack walk (Doesn't it hinder the gradient descent a little, to not go
+in direction of steepest gradient?). The problem is, that the learning gets lower
+with time automatically. A good strategy is to combine the two approaches. Only
+problem is the initail step, cause it's really big, because the second order
+momentum is 0 and gets divided by that quadratic.
+
+Regularization:
+The whole goal of NN is to perform good on the test set. For this it is important,
+that it generalizes well. One way of Regularization is the standard L1,L2 term.
+Additionally Dropout of nenurons (typically like P=0.5) and also connections can
+help as well. (??+Why remake the effect of that in test+??).
+Another strategy is to change the input picture a little randomly. Like turnin them,
+brighntess, contrast etc...
+
+Transfer Learning:
+You almost never train network from scratch. If you have similar data, you can
+only train last layer new. If more data, even more of the last layers.
+
+
+Should the extreme minimums of the NN be found?
+Argue

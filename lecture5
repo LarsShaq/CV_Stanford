@@ -1,0 +1,13 @@
+lecture 5:
+Convolutional Nerual Networks were presented. Basically they work by laying a filter
+with shared parameters over every region of the image. Usually there are multiple
+filters applied. Each of them represents an actiovation map.
+Depending on filter size, the distance when to apply, and the
+dealing with the edge of the image determines the new dimension of the picture.
+The edges are usually dealed with adding 0. These Filters are applied in all colour
+channels. Pooling or the filter can be applied to downsize the image. There is
+a trend to go away from pooling. The complete conv net usually exists of many layers
+of convolution, pooling and fully connected, with ReLu. The trend is to make
+them deeper.
+It is copied from the human vision system. The experiment with cats, where they
+showed them edges. Every filter works as a neuran firing for this region.

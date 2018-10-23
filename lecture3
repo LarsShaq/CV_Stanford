@@ -1,0 +1,52 @@
+lecture 3:
+In last lecture the linear separation was discussed and how to label an input with it.
+But there was no means of how good this label is. So in this lectures loss
+functions were introduced. With this lostfunction, you compare the outputet label
+to the given label for all training examples and average over it. A common lostfunction
+are that ov the multiclass SVM. Where you measure the loss as the sum of max(0, si-sj+1), Where
+si is the f(xi).The sum is over all, but the correct class.
+This expression has two conditional statements in it: the case
+where sj>si+1, sj is the value of the correct class, so the correct case is the
+highest value of all by a margin 1. And the other case where some other is bigger.
+
+1) Wher does the 1 come from? Specific value doesnt matter, but why?
+
+To Apply the Orccams Razor, where we always should choose the easiest model that
+explains the data, a regularization term can be added to the lost function, with
+L1 or L2 regulations or maybe more complex. L1 is the abs(W) and L2 the W² measure.
+L1 usually leads to a more sparse representation. L2 punishes really high weights
+even more. It also gets rid of ambigious solutions.
+
+Next the softmax Loss was introduced. Therefore the exp is applied to each si,
+so each value gets positive. Then it gets normalized. This leads to P(y=k|X=xi).
+
+1) Think about why?
+-> If we interpret the f(xi) as unormalized log probabilities, then applying the
+exp and normalizing gives the proboablity. So it's calculating the maxLikelihood.
+With the regularization it can be made to MAP
+    1) why?
+-> view from information theory: the cross-entropy is -sum(P(x)*log(q(x))) over all x,
+where P(x) is the real distribution and q(x) the estimated. Since we assume all weight
+on one label y, P(x)=[0 ... 1 ...0] and it becomes the softmax.
+
+To max the log likelikhood then, we need to min -log(P(y|x)). The calculation of
+the exp divided by others can lead to numerical instabilities, since all the values
+can be really big. To overcome this, the fraction can be multiplied by C which
+can be put in the exp.
+
+Difference between SVM and Softmax: Softmax can be interpreted as confidence (appears
+like propabilty, but changing lambda changes the probs, so more confidence). In
+the same sense the values of SVM are more for ordering, since they can be easily
+scaled. Another difference is, that SVM is satisfied as soon as right class has
+highest score, softmax always tries to improve. This can make the SVM make care less
+about different classes that he already classified correctly and more focus on the
+non correct classified. 
+
+Backpropagation was intorduced, with gradient analytically calculaet, but checked
+with numerical solution. And also SGD that uses mini batches, which is way more
+efficient.
+
+Image Preproccessing: subtrating the mean of each feature (in this cas pixel) and
+then normalize to -1 1.
+
+1) Why?
